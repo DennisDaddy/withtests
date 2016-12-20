@@ -47,6 +47,7 @@ class UsersController < ApplicationController
 	end  	
 
 	# Before filters
+
    # Confirms a logged-in user.
 	def logged_in_user
 		unless logged_in?
@@ -55,7 +56,7 @@ class UsersController < ApplicationController
 		end
 	end
 
-		def correct_user
+	def correct_user
 	@user = User.find(params[:id])
 	redirect_to(root_url) unless @user == current_user
 	end
