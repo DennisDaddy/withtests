@@ -18,7 +18,8 @@ Rails.application.configure do
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
-      'Cache-Control' => 'public, max-age=172800'
+      'Cache-Control' => 'public, max-age=172800'config.action_mailer.raise_delivery_errors = true
+c
     }
   else
     config.action_controller.perform_caching = false
@@ -27,7 +28,12 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :test
+  host = 'localhost:3000'
+  config.action_mailer.defauconfig.action_mailer.raise_delivery_errors = true
+clt_url_options = { host: host }
+
 
   config.action_mailer.perform_caching = false
 
@@ -38,12 +44,13 @@ Rails.application.configure do
   config.active_record.migration_error = :page_load
 
   # Debug mode disables concatenation and preprocessing of assets.
-  # This option may cause significant delays in view rendering with a large
+  # This option may cause siconfig.action_mailer.raise_delivery_errors = true
+cgnificant delays in view rendering with a large
   # number of complex assets.
-  config.assets.debug = true
-
-  # Suppress logger output for asset requests.
-  config.assets.quiet = true
+  config.assets.debug = trueconfig.acconfig.action_mailer.raise_delivery_errors = true
+ction_mailer.raise_delivery_errors = true
+cconfig.action_mailer.raise_delivery_errors = true
+c
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
