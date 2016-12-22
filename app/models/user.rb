@@ -27,6 +27,13 @@ class User < ApplicationRecord
 	    update_attribute(:remember_digest, User.digest(remember_token))
 	end		
 
+	# Activates an account.
+	def activate
+	update_attribute(:activated,
+	true)
+	update_attribute(:activated_at, Time.zone.now)
+	end
+
 	#Returns true if the given token matches the digest.
     
 	def authenticated?(attribute, token)
